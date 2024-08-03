@@ -2,20 +2,12 @@
 
 Welcome to the **JavaScript-Unit-Testing** repository! This project is designed to help you master unit testing in JavaScript using Vitest. Here, you'll learn the fundamentals, best practices, and advanced techniques to ensure your JavaScript code is reliable and maintainable. 🎉
 
-## Table of Contents
-- [Key Outcomes](#key-outcomes)
-- [Getting Started](#getting-started)
-- [Running Tests](#running-tests)
-- [Running Tests in Browser UI](#running-tests-in-browser-ui)
-- [Test Coverage](#test-coverage)
-
 ## Key Outcomes 📚
 By working through this repository, you will:
 - Understand the fundamentals of unit testing and its significance in JavaScript development.
-- Master the setup and usage of Vitest for effective JavaScript testing.
-- Discover the best practices for writing clean, maintainable, and trustworthy tests.
+- Setup and usage of Vitest for effective JavaScript testing.
 - Learn various techniques to run and debug tests effectively.
-- Master working with matchers and crafting precise, effective assertions.
+- Working with matchers and crafting precise, effective assertions.
 - Practice positive, negative, and boundary testing to cover a wide range of test scenarios.
 - Break dependencies in your tests with mocks.
 - Improve code quality with static analysis, including TypeScript, ESLint, and Prettier.
