@@ -23,6 +23,7 @@ describe('getCoupons', () => {
             expect(coupon).toHaveProperty('discount');
             expect(typeof coupon.discount).toBe('number');
             expect(coupon.discount).toBeGreaterThan(0);
+            expect(coupon.discount).toBeLessThan(1);
         });
     })
 })
