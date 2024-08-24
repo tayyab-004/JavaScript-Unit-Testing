@@ -1,5 +1,5 @@
 import { it, expect, describe } from 'vitest'
-import { calculateDiscount, getCoupons } from '../src/core';
+import { calculateDiscount, getCoupons, validateUserInput } from '../src/core';
 
 describe('getCoupons', () => {
     it('should return an array of coupons', () => {
@@ -51,5 +51,27 @@ describe('calculateDiscount', () => {
 
     it('should handle invalid discount code', () => {
         expect(calculateDiscount(10, 'INVALID')).toBe(10);
+    })
+})
+
+describe('validateUserInput', () => {
+    it('should return success if given a valid input', () => {
+        expect(validateUserInput('Tayyab', 22)).toMatch(/success/i);
+    })
+
+    it('should return error if username is not a string', () => {
+        expect(validateUserInput(10, 22)).toMatch(/invalid/i);
+    })
+
+    it('should return error if username is less than 3 characters', () => {
+        expect(validateUserInput("TG", 22)).toMatch(/invalid/i);
+    })
+
+    it('should return error if age is not a number', () => {
+        expect(validateUserInput('tayyab', '22')).toMatch(/invalid/i);
+    })
+
+    it('should return error if age is less than 18', () => {
+        expect(validateUserInput('tayyab', 17)).toMatch(/invalid/i);
     })
 })
