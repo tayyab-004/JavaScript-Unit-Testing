@@ -89,18 +89,15 @@ describe('validateUserInput', () => {
 })
 
 describe('isPriceInRange', () => {
-    it('should return false when price is outside the range', () => {
-        expect(isPriceInRange(-10, 0, 100)).toBe(false);
-        expect(isPriceInRange(200, 0, 100)).toBe(false);
-    })
-
-    it('should return true when the price is equal to min or max', () => {
-        expect(isPriceInRange(0, 0, 100)).toBe(true);
-        expect(isPriceInRange(100, 0, 100)).toBe(true);
-    })
-
-    it('should return true when the price is within the range', () => {
-        expect(isPriceInRange(99, 0, 100)).toBe(true);
+    // parameterized testing
+    it.each([
+        { scenario: 'price > min', price: -10, result: false },
+        { scenario: 'price = min', price: 0, result: true },
+        { scenario: 'price between max and max', price: 99, result: true },
+        { scenario: 'price = max', price: 100, result: true },
+        { scenario: 'price < max', price: 200, result: false }
+    ])(`should returns $result when $scenario`, ({price, result}) => {
+        expect(isPriceInRange(price, 0, 100)).toBe(result);
     })
 })
 
@@ -144,32 +141,8 @@ describe('canDrive', () => {
         {age: 17, country: 'US', result: true},
         {age: 16, country: 'UK', result: false},
         {age: 17, country: 'UK', result: true},
-        {age: 18, country: 'UK', result: true},
-    ])('should return $result for $age, $country', ({age, country, result}) => {
+        {age: 18, country: 'UK', result: true}
+    ])(`should return $result for $age, $country`, ({age, country, result}) => {
     expect(canDrive(age, country)).toBe(result);
     })
-
-    // it('should return false for underage in the US', () => {
-    //     expect(canDrive(15, 'US')).toBe(false);
-    // })
-
-    // it('should return false for underage in the UK', () => {
-    //     expect(canDrive(16, 'UK')).toBe(false);
-    // })
-
-    // it('should return true for driving eligibility in the US', () => {
-    //     expect(canDrive(17, 'US')).toBe(true);
-    // })
-
-    // it('should return true for driving eligibility in the UK', () => {
-    //     expect(canDrive(18, 'UK')).toBe(true);
-    // })
-
-    // it('should return true for min age in the US', () => {
-    //     expect(canDrive(16, 'US')).toBe(true);
-    // })
-
-    // it('should return true for min age in the UK', () => {
-    //     expect(canDrive(17, 'UK')).toBe(true);
-    // })
 })
