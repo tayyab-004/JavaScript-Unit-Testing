@@ -1,11 +1,12 @@
 import { vi, it, expect, describe } from 'vitest'
-import { getPriceInCurrency, getShippingInfo } from '../src/mocking';
+import { getPriceInCurrency, getShippingInfo, renderPage } from '../src/mocking';
 import { getExchangeRate } from '../src/libs/currency';
 import { getShippingQuote } from '../src/libs/shipping';
+import { trackPageView } from '../src/libs/analytics';
 
 vi.mock('../src/libs/currency');
 vi.mock('../src/libs/shipping');
-
+vi.mock('../src/libs/analytics');
 
 describe('Mock', () => {
     it('sendText ok', () => {
@@ -46,5 +47,19 @@ describe('getShippingInfo', () => {
         const result = getShippingInfo("PAKISTAN");
 
         expect(result).toMatch(/shipping cost: \$10 \(2 days\)/i)
+    })
+})
+
+describe('renderPage', () => {
+    it('should return the correct content', async() => {
+        const result = await renderPage();
+
+        expect(result).toMatch(/content/i);
+    })
+
+    it('should call analytics', async() => {
+        await renderPage();
+
+        expect(trackPageView).toBeCalledWith('/home');
     })
 })
