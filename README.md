@@ -3,7 +3,9 @@
 Welcome to the **JavaScript-Unit-Testing** repository! This project is designed to help you master unit testing in JavaScript using Vitest. Here, you'll learn the fundamentals, best practices, and advanced techniques to ensure your JavaScript code is reliable and maintainable. 🎉
 
 ## Key Outcomes 📚
+
 By working through this repository, you will:
+
 - Understand the fundamentals of unit testing and its significance in JavaScript development.
 - Setup and usage of Vitest for effective JavaScript testing.
 - Learn various techniques to run and debug tests effectively.
@@ -14,9 +16,11 @@ By working through this repository, you will:
 - Automate code quality checks with Husky to maintain high coding standards.
 
 ## Getting Started 🏁
+
 To get started with this repository, follow these steps:
 
 1. **Clone the repository**:
+
    ```
    git clone https://github.com/tayyab-004/JavaScript-Unit-Testing.git
    ```
@@ -27,19 +31,25 @@ To get started with this repository, follow these steps:
    ```
 
 ## Running Tests 🧪
+
 To run the tests, use the following command:
+
 ```
 npm test
 ```
 
 ## Running Tests in Browser UI 🌐
+
 To run tests in the browser UI using Vitest, use:
+
 ```
 npm run test:ui
 ```
 
 ## Test Coverage 📊
+
 To run test code coverage, use:
+
 ```
 npm run coverage
 ```
