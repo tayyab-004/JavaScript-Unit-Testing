@@ -158,7 +158,7 @@ describe('canDrive', () => {
 describe('fetchData', () => {
   it('should return a promise that will resolve to an array of numbers', async () => {
     try {
-      const result = await fetchData();
+      await fetchData();
     } catch (error) {
       expect(error).toHaveProperty('reason');
       expect(error.reason).toMatch(/fail/i);
