@@ -1,6 +1,7 @@
 # JavaScript-Unit-Testing 🚀
 
 Welcome to the **JavaScript-Unit-Testing** repository! This project is designed to help you master unit testing in JavaScript using Vitest. Here, you'll learn the fundamentals, best practices, and advanced techniques to ensure your JavaScript code is reliable and maintainable. 🎉
+![tests](assets/ss.png)
 
 ## Key Outcomes 📚
 
